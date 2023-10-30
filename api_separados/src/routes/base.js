@@ -5,7 +5,7 @@ router.get('/', function(request,response){
     return response.send('API funcionando')
 });
 
-app.get('/sobre', function (request, response) {
+router.get('/sobre', function (request, response) {
     response.send('Informações sobre a API.');
   });
   
