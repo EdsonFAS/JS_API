@@ -35,7 +35,7 @@ const listaContatos = [
   ];
   
   // Listar todos os contatos
-  app.get('/contatos', function (request, response) {
+  router.get('/contatos', function (request, response) {
     return response.json({ dados: listaContatos });
   });
   
@@ -43,7 +43,7 @@ const listaContatos = [
   return response.send('lista de contatos');
   });*/
   
-  app.post('/contatos', function (request,response){
+  router.post('/contatos', function (request,response){
   
     const nome = request.body.nome;
     const data = request.body.data;
@@ -65,7 +65,7 @@ const listaContatos = [
     return response.json(novoContato);
   });
   
-  app.put('/contatos/:codigo', function (request, response){
+  router.put('/contatos/:codigo', function (request, response){
   const codigo = request.params.codigo;
   
   let contato = null;
@@ -96,7 +96,7 @@ const listaContatos = [
   
   });
   
-  app.delete('/contatos/:codigo', function (request, response) {
+  router.delete('/contatos/:codigo', function (request, response) {
     const codigo = request.params.codigo;
   
     return response.send(`Remover o contato Código: ${codigo}`);
